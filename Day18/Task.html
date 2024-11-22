@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            background-image: url('https://png.pngtree.com/background/20230517/original/pngtree-clock-scene-is-placed-in-the-middle-of-an-old-clock-picture-image_2637111.jpg');
+            background-size: cover;
+        }
+        #clock {
+            font-size: 175px;
+            margin: 200px auto;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 20px;
+            color: white;        
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius: 10px 20px 30px; 
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">08:10:45</div>
+    <button id="time">Switch to 12-hour format</button>
+    <script>
+        let is24HourFormat = true;
+        setInterval(showTime, 1000);
+        function showTime() {
+            let time = new Date();
+            let hour = time.getHours();
+            let min = time.getMinutes();
+            let sec = time.getSeconds();
+            hour = hour < 10 ? "0" + hour : hour;
+            min = min < 10 ? "0" + min : min;
+            sec = sec < 10 ? "0" + sec : sec;
+            let currentTime;
+            if (is24HourFormat) {
+                currentTime = hour + ":" + min + ":" + sec;
+            } else {
+                let period = hour >= 12 ? "PM" : "AM";
+                hour = hour % 12 || 12; 
+                currentTime = hour + ":" + min + ":" + sec + " " + period;
+            }
+            document.getElementById("clock").innerHTML = currentTime;
+        }
+        document.getElementById("time").addEventListener("click", function() {
+            is24HourFormat = !is24HourFormat;
+            this.innerText = is24HourFormat ? "Switch to 12-hour format" : "Switch to 24-hour format";
+        });
+        showTime();
+    </script>
+</body>
+</html>

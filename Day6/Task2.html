@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let a = prompt("Enter a day");
+
+if (a === 'monday') {
+    console.log("Monday is the starting day");
+} else if (a === 'tuesday') {
+    console.log("Tuesday is keep going day");
+} else if (a === 'wednesday') {
+    console.log("Wednesday is a good day");
+} else if (a === 'thursday') {
+    console.log("Thursday is almost there day");
+} else if (a === 'friday') {
+    console.log("Friday is the weekend warm-up");
+} else if (a === 'saturday') {
+    console.log("Saturday is a fun day");
+} else if (a === 'sunday') {
+    console.log("Sunday is a rest day");
+} else {
+    console.log("Enter a valid day");
+}
+    
+let amount = prompt("Enter the total purchase amount:");
+
+if (amount < 50) {
+    console.log("No discount");
+} else if (amount >= 50 && amount <= 100) {
+    console.log("5% discount");
+} else if (amount >= 101 && amount <= 200) {
+    console.log("10% discount");
+} else {
+    console.log("15% discount");
+}
+
+let color = prompt("Enter a color");
+        switch(color){
+            case 'red':
+                console.log("Stop");
+                break;
+            case 'yellow':
+                console.log("Get ready");
+                break;
+            case 'green':
+                console.log("Go");
+                break;
+            default:console.log("Enter a Traffic ligth colors only");
+            break;
+                }
+let dish = prompt("Enter the dish name:");
+        if (dish === "Biriyani") {
+        console.log("Price: 100");
+        } else if (dish === "Shawarma") {
+        console.log("Price: 150");
+        } else if (dish === "Fried rice") {
+        console.log("Price: 170");
+        } else if (dish === "Veg pulao") {
+        console.log("Price: 100");
+        } else {
+        console.log("Dish not available");
+        }
+        let num1 = prompt("Enter Number 1");
+let num2 = prompt("Enter Number 2");
+let op = prompt("Enter the Operator Symbol");
+
+switch (op) {
+    case '+':
+        console.log(+num1 + +num2); 
+        break;
+    case '-':
+        console.log(num1 - num2);
+        break;
+    case '*':
+        console.log(num1 * num2); 
+        break;
+    case '/':
+        if (num2 != 0) {
+            console.log(num1 / num2); 
+        } else {
+            console.log("Cannot divide by zero");
+        }
+        break;
+    case '%':
+        console.log(num1 % num2); 
+        break;
+    default:
+        console.log("Enter a valid operator");
+        break;
+    }
+
+    </script>
+</body>
+</html>

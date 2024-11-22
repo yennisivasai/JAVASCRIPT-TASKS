@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+</head>
+<body>
+    <script>
+        // Main Name
+        let mainName = document.createElement("h1");
+        mainName.innerText = "Kondaveeti Basava Sai Manjunath";
+        mainName.style.color = "red";
+        mainName.style.textAlign = "center";
+        document.body.appendChild(mainName);
+
+        // Objective Section
+        let objectiveHeader = document.createElement("h4");
+        objectiveHeader.innerText = "Career Objective";
+        objectiveHeader.style.color = "blue";
+        document.body.appendChild(objectiveHeader);
+
+        let objectiveText = document.createElement("p");
+          objectiveText.innerHTML = "<i>My main objective is looking for an opportunity to work in an organization that offers challenging assignments to utilize my professional skills along with career growth.</i>";
+        document.body.appendChild(objectiveText);
+
+        // Career Profile Section
+        let profileHeader = document.createElement("h4");
+        profileHeader.innerText = "Career Profile";
+        profileHeader.style.color = "blue";
+        document.body.appendChild(profileHeader);
+
+        let profileText = document.createElement("p");
+        profileText.innerHTML = "<b>Having strong analytical problem solving skills, willingness to relocate and ability to quickly adapt to new environments and technologies, dedicated to successful project completion with excellent communication and interpersonal skills.</b>";
+        document.body.appendChild(profileText);
+
+        // Educational Profile Section
+        let educationHeader = document.createElement("h4");
+        educationHeader.innerText = "Educational Profile";
+        educationHeader.style.color = "blue";
+        document.body.appendChild(educationHeader);
+
+        let educationTable = document.createElement("table");
+        educationTable.border = "1";
+        let tableRow = document.createElement("tr");
+        
+        let sslcCell = document.createElement("th");
+        sslcCell.innerText = "SSLC - 7.7";
+        let diplomaCell = document.createElement("th");
+        diplomaCell.innerText = "DIPLOMA - 7.0";
+        let btechCell = document.createElement("th");
+        btechCell.innerText = "B.Tech - 8.82";
+        
+        tableRow.appendChild(sslcCell);
+        tableRow.appendChild(diplomaCell);
+        tableRow.appendChild(btechCell);
+        educationTable.appendChild(tableRow);
+        document.body.appendChild(educationTable);
+
+        // Technical Skills Section
+        let techSkillsHeader = document.createElement("h4");
+        techSkillsHeader.innerText = "Technical Skills";
+        techSkillsHeader.style.color = "blue";
+        document.body.appendChild(techSkillsHeader);
+
+        let techSkillsList = document.createElement("ul");
+        techSkillsList.innerHTML = `
+            <li>Basic knowledge of programming languages like C, C++, SQL, LINUX</li>
+            <li>Computer knowledge in MS WORD, EXCEL</li>
+        `;
+        document.body.appendChild(techSkillsList);
+
+        // Strengths Section
+        let strengthsHeader = document.createElement("h4");
+        strengthsHeader.innerText = "Strengths";
+        strengthsHeader.style.color = "blue";
+        document.body.appendChild(strengthsHeader);
+
+        let strengthsList = document.createElement("ul");
+        strengthsList.innerHTML = `
+            <li>Quick learner</li>
+            <li>Good analytical skills</li>
+            <li>Initiator and passionate about working</li>
+            <li>Good grasping ability</li>
+        `;
+        document.body.appendChild(strengthsList);
+
+        // Personal Information Section
+        let personalInfoHeader = document.createElement("h4");
+        personalInfoHeader.innerText = "Personal Information";
+        personalInfoHeader.style.color = "blue";
+        document.body.appendChild(personalInfoHeader);
+
+        let personalInfoList = document.createElement("ul");
+        personalInfoList.innerHTML = `
+            <li>Name: Kondaveeti Basava Sai Manjunath</li>
+            <li>Email: manjunathsai789@gmail.com</li>
+            <li>Date of Birth: 09-11-2001</li>
+            <li>Permanent Address: Mandadam near Sivalayam, Thullur mandal, Guntur district Mandadam-522238</li>
+        `;
+        document.body.appendChild(personalInfoList);
+
+        // Declaration Section
+        let declarationHeader = document.createElement("h4");
+        declarationHeader.innerText = "Declaration";
+        declarationHeader.style.color = "blue";
+        document.body.appendChild(declarationHeader);
+
+        let declarationText = document.createElement("p");
+        declarationText.innerText = "I hereby declare that all the above information is true and to the best of my knowledge.";
+        document.body.appendChild(declarationText);
+
+        let signatureText = document.createElement("p");
+        signatureText.innerText = "Signature:";
+        document.body.appendChild(signatureText);
+    </script>
+</body>
+</html>

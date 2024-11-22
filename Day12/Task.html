@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Image Buttons</title>
+    <style>  
+        #image-container {
+            overflow: hidden;
+            width: 300px;
+            height: 200px;
+            margin-top: 200px;
+        }
+        #image {
+            width: auto;  
+            height: 100%;
+            object-fit: cover;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #12b300;
+        }
+    </style>
+</head>
+<body>
+    <center><div id="image-container">
+        <img id="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFELMg19khoufcy-RGrSnxPaEod2PP3NSVBg&s" alt="Default Image">
+    </div>
+    <div class="button-container"></div></center>
+
+    <script>
+        var buttons = [
+            { label: "HTML", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png", alt: "HTML Image" },
+            { label: "CSS", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/800px-CSS3_logo_and_wordmark.svg.png", alt: "CSS Image" },
+            { label: "JavaScript", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png", alt: "JavaScript Image" },
+            { label: "Bootstrap", imgSrc:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaofFtlMrEKER47KlrUiWclRWHY4bENpL0oA&s",alt:"Bootstrap Image"}
+        ];
+        buttons.forEach(button => {
+            var newbtn = document.createElement("button");
+            newbtn.textContent = button.label;
+            newbtn.addEventListener('click', () => {
+                document.getElementById('image').src = button.imgSrc;
+                document.getElementById('image').alt = button.alt;
+            });
+            document.querySelector('.button-container').appendChild(newbtn);
+        });
+    </script>
+</body>
+</html>

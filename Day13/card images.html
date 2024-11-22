@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 20px;
+            padding: 20px;
+        }
+        .child {
+            position: relative; 
+        }
+        img {
+            width: 100%; 
+            height: 200px; 
+            display: block; 
+        }
+        .heading {
+            position: absolute;
+            top: 5px;
+            left: 23%; 
+            transform: translateX(-50%); 
+            background-color:whitesmoke; 
+        }
+    </style>
+</head>
+<body>
+    <div class="parent"></div> 
+    <script>
+        const headings = ["Summer House", "Brick House", "Renovated", "Barn House", "Summer House", "Brick House", "Renovated", "Barn House"];
+        const images = [
+            "https://www.w3schools.com/w3images/house5.jpg", 
+            "https://www.w3schools.com/w3images/house2.jpg", 
+            "https://www.w3schools.com/w3images/house3.jpg",
+            "https://www.w3schools.com/w3images/house4.jpg",
+            "https://www.w3schools.com/w3images/house2.jpg",
+            "https://www.w3schools.com/w3images/house5.jpg",
+            "https://www.w3schools.com/w3images/house3.jpg",
+            "https://www.w3schools.com/w3images/house5.jpg",
+            "https://www.w3schools.com/w3images/house4.jpg",
+        ];
+        
+        const parent = document.querySelector(".parent");
+
+        for (let i = 0; i < headings.length; i++) {
+            const child = document.createElement("div");
+            child.classList.add("child");
+
+            const img = document.createElement("img");
+            img.src = images[i];
+            img.alt = headings[i]; 
+
+            const headingElement = document.createElement("h2");
+            headingElement.innerText = headings[i];
+            headingElement.classList.add("heading"); 
+
+            child.append(img, headingElement);
+            parent.appendChild(child);
+        }
+    </script>
+</body>
+</html>

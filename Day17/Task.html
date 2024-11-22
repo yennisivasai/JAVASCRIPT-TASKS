@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+            background: url(https://otp.dev/static/getotp-og.png);
+            background-size: cover;
+        }
+        #container {
+            padding: 20px;
+            border: 3px solid #4CAF50;
+            border-radius: 10px;
+            background: white;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background: #4CAF50; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049; 
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>OTP Generator</h1>
+        <button id="generateOtpButton">Generate OTP</button>
+        <div id="otp">Your OTP will appear here</div>
+    </div>
+
+    <script>
+        function getOtp() {
+            return Array.from({length: 6}, () => Math.floor(Math.random() * 10)).join('');
+        }
+
+        document.getElementById('generateOtpButton').addEventListener('click', function() {
+            const otp = getOtp();
+            document.getElementById('otp').innerText = `Your OTP is: ${otp}`;
+        });
+    </script>
+</body>
+</html>

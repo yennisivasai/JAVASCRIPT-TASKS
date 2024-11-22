@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var input = prompt('Enter a string: ');
+
+if (input) {
+    var uppercase = input.toUpperCase();
+    var lowercase = input.toLowerCase();
+    var reversed = input.split('').reverse().join('');
+    
+    var vowels = 'aeiouAEIOU';
+    var vowelCount = input.split('').filter(function(char) {
+        return vowels.includes(char);
+    }).length;
+
+    console.log('Uppercase:', uppercase);
+    console.log('Lowercase:', lowercase);
+    console.log('Reversed:', reversed);
+    console.log('Number of vowels:', vowelCount);
+} else {
+    console.log('No input provided.');
+}
+
+    </script>
+</body>
+</html>

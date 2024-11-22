@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str="hello"
+var str=str.split('').reverse('').join();
+console.log(str);
+
+var obj = {
+    name:'Manjunath',
+    age:23,
+    city:'vijayawada'
+}
+for (var k in obj){   //for in
+    var v = obj[k];
+    console.log(k+":"+v);
+}
+var obj = {
+    name:'Manjunath',
+    age:23,
+    city:'Vijayawada'
+}
+for(var k of Object.keys(obj)){  //for off
+    var v = obj[k] 
+    console.log(k+":"+v);
+}
+    </script>
+</body>
+</html>

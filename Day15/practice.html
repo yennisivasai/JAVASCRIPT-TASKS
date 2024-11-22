@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var favoriteMovies = ["Inception", "The Matrix", "Interstellar", "The Shawshank Redemption", "Pulp Fiction"];
+console.log("Using for loop:");
+
+for (var i = 0; i < favoriteMovies.length; i++) {
+
+    console.log(favoriteMovies[i]);
+
+}
+console.log("Using for...in loop:");
+
+for (var index in favoriteMovies) {
+
+    console.log(favoriteMovies[index]);
+
+}
+console.log("Using for...of loop:");
+
+for (var movie of favoriteMovies) {
+
+    console.log(movie);
+
+}
+favoriteMovies.shift(); 
+favoriteMovies.pop();  
+console.log("After removing first and last elements:", favoriteMovies);
+
+// Reversing the array
+var reversedMovies = [];
+for (var i = favoriteMovies.length - 1; i >= 0; i--) {
+    reversedMovies.push(favoriteMovies[i]);
+}
+
+console.log("Reversed array:", reversedMovies);
+
+var numbers = [12, 3, 5, 6, 22, 56, 29];
+var evenSum = 0;
+var oddSum = 0;
+
+for (var number of numbers) {
+    if (number % 2 === 0) {
+        evenSum += number; // Add to even sum
+    } else {
+        oddSum += number;  // Add to odd sum
+    }
+}
+
+console.log("Even sum:", evenSum);
+console.log("Odd sum:", oddSum);
+var numbers = [12, 3, 5, 6, 22, 56, 29];
+var evenSum = 0;
+var oddSum = 0;
+
+for (var num of numbers) {
+    if (num % 2 === 0) {
+        evenSum += num;
+    } else {
+        oddSum += num;
+    }
+}
+
+console.log("Even Sum:", evenSum);
+console.log("Odd Sum:", oddSum);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web Calculator with History</title>
+</head>
+<body>
+    <h2>Simple Calculator</h2>  
+    <label for="firstNumber">Enter number one:</label>
+    <input type="number" id="firstNumber">
+    <label for="secondNumber">Enter number two:</label>
+    <input type="number" id="secondNumber">
+    <div>
+        <button onclick="performOperation('add')">Addition</button>
+        <button onclick="performOperation('subtract')">Subtraction</button>
+        <button onclick="performOperation('multiply')">Multiplication</button>
+        <button onclick="performOperation('divide')">Division</button>
+    </div>
+    <div id="result">
+    </div>
+    <div id="savedResult">
+        <h3>Stored result for further operations:</h3>
+        <div id="storedValue">No operation performed yet.</div>
+    </div>
+
+    <div id="history">
+        <h3>History of Operations:</h3>
+        <ul id="historyLog">
+        </ul>
+        <button onclick="clearHistory()">Clear History</button> 
+    </div>
+
+    <script>
+        let savedValue = null; 
+        let history = [];     
+        function performOperation(operation) {
+            let firstNumber = parseFloat(document.getElementById('firstNumber').value);
+            let secondNumber = parseFloat(document.getElementById('secondNumber').value);
+            let result = '';
+            if (savedValue !== null) {
+                firstNumber = savedValue;
+            }
+            if (isNaN(firstNumber) || isNaN(secondNumber)) {
+                result = 'Please enter valid numbers.';
+            } else {
+                switch(operation) {
+                    case 'add':
+                        result = `The addition of ${firstNumber} and ${secondNumber} is ${firstNumber + secondNumber}`;
+                        savedValue = firstNumber + secondNumber; // Store the result
+                        addToHistory(firstNumber, secondNumber, '+', savedValue);
+                        break;
+                    case 'subtract':
+                        result = `The subtraction of ${firstNumber} and ${secondNumber} is ${firstNumber - secondNumber}`;
+                        savedValue = firstNumber - secondNumber; // Store the result
+                        addToHistory(firstNumber, secondNumber, '-', savedValue);
+                        break;
+                    case 'multiply':
+                        result = `The multiplication of ${firstNumber} and ${secondNumber} is ${firstNumber * secondNumber}`;
+                        savedValue = firstNumber * secondNumber; // Store the result
+                        addToHistory(firstNumber, secondNumber, '*', savedValue);
+                        break;
+                    case 'divide':
+                        if (secondNumber === 0) {
+                            result = 'Division by zero is not allowed.';
+                        } else {
+                            result = `The division of ${firstNumber} by ${secondNumber} is ${firstNumber / secondNumber}`;
+                            savedValue = firstNumber / secondNumber; // Store the result
+                            addToHistory(firstNumber, secondNumber, '/', savedValue);
+                        }
+                        break;
+                    default:
+                        result = 'Invalid operation.';
+                }
+            }
+            document.getElementById('result').innerText = result;
+            if (savedValue !== null) {
+                document.getElementById('storedValue').innerText = savedValue;
+            }
+        }
+        function addToHistory(firstNumber, secondNumber, operator, result) {
+            history.push(`${firstNumber} ${operator} ${secondNumber} = ${result}`);
+            const historyLog = document.getElementById('historyLog');
+            historyLog.innerHTML = ''; // Clear existing history
+            history.forEach(entry => {
+                const listItem = document.createElement('li');
+                listItem.innerText = entry;
+                historyLog.appendChild(listItem);
+            });
+        }
+        function clearHistory() {
+            history = []; 
+            const historyLog = document.getElementById('historyLog');
+            historyLog.innerHTML = ''; 
+        }
+    </script>
+</body>
+</html>

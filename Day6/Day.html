@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day of the Week Message</title>
+</head>
+<body>
+    <h1 id="message"></h1>
+
+    <script>
+        const today = new Date().getDay();
+        let message = '';
+
+        if (today === 1) {
+            message = "Start your week strong! (Monday)";
+        } else if (today === 2) {
+            message = "Keep going! (Tuesday)";
+        } else if (today === 3) {
+            message = "Halfway there! (Wednesday)";
+        } else if (today === 4) {
+            message = "Almost the weekend! (Thursday)";
+        } else if (today === 5) {
+            message = "Happy Friday!"; ("Friday")
+        } else if (today === 6 ) {
+            message = "Enjoy your weekend!";("Saturday")
+        } else if (today === 7 ){
+            message="Rest day" ("Sunday")
+        }
+    document.getElementById("message").textContent = message;
+    </script>
+</body>
+</html>

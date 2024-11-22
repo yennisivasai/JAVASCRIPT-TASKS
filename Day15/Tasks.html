@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ //Task1       
+var favoriteMovies = ["Pokiri", "Dookudu","Attarintiki Daredi","Gabbar Singh","Bharat Ane Nenu"];
+console.log("Using for loop:");
+for (var i = 0; i < favoriteMovies.length; i++) {
+    console.log(favoriteMovies[i]);
+}
+console.log("Using for in loop:");
+for (var index in favoriteMovies) {
+    console.log(favoriteMovies[index]);
+}
+console.log("Using for of loop:");
+for (var movie of favoriteMovies) {
+    console.log(movie);
+}
+//Task2
+favoriteMovies.shift();
+favoriteMovies.pop(); 
+console.log("After removing first and last elements:", favoriteMovies);
+//Task3
+var reversedMovies = [];
+for (var i = favoriteMovies.length - 1; i >= 0; i--) {
+    reversedMovies.push(favoriteMovies[i]);
+}
+console.log("Reversed Array:", reversedMovies);
+//Task4
+var numbers = [12, 3, 5, 6, 22, 56, 29];
+var evenSum = 0;
+var oddSum = 0;
+for (var num of numbers) {
+    if (num % 2 === 0) {
+        evenSum += num;
+    } else {
+        oddSum += num;
+    }
+}
+console.log("Even Sum:", evenSum);
+console.log("Odd Sum:", oddSum);
+//Task5
+var arr = ["apple", "banana", "mango", "banana", 3, 4, 5, 6, true, { name: "object" }];
+var num = [];
+var str = [];
+var bool = [];
+var obj = [];
+for (var item of arr) {
+    if (typeof item === "number") {
+        num.push(item);
+    } else if (typeof item === "string") {
+        str.push(item);
+    } else if (typeof item === "boolean") {
+        bool.push(item);
+    } else if (typeof item === "object") {
+        obj.push(item);
+    }
+}
+console.log("Numbers:", num);
+console.log("Strings:", str);
+console.log("Booleans:", bool);
+console.log("Objects:", obj);
+    </script>
+</body>
+</html>
